@@ -4,10 +4,30 @@ import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
 import BannerImg from 'assets/banner-thumb.png';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
+import Head from 'next/head';
 
 export default function Banner() {
   return (
-    <h1>Banner</h1>
+    <section sx={styles.banner} id="home">
+      <Container sx={styles.banner.container}>
+        <Box sx={styles.banner.contentBox}>
+          <Heading as="h1" variant="heroPrimary">
+          Lorem ipsum dolor sit amet consectetur
+
+          </Heading>
+          <Text as="p" variant="heroSecondary">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          </Text>
+          <Button variant="primary">
+            Explore
+          </Button>
+          <Box>
+            <Image src={BannerImg} alt="banner"/>
+          </Box>
+
+        </Box>
+      </Container>
+    </section>
   );
 }
 
