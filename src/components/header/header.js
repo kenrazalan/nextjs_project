@@ -9,7 +9,30 @@ import menuItems from './header.data';
 
 export default function Header({ className }) {
   return (
-      <header sx={styles.header} className={className}>Header</header>
+      <header sx={styles.header} className={className} id="header">
+        <Container sx={styles.container}>
+        <Logo src={LogoDark}/>
+        <Flex as="nav" sx={styles.nav}>
+            {menuItems.map((item,i) => (
+              <Link
+                 activeClass="active"
+                 to={item.path}
+                 spy={true}
+                 smooth={true}
+                 offset={-70}
+                 duration={500}
+                 key={i}
+              >
+                  {item.label}
+              </Link>
+            ))}
+        </Flex>
+        <Button className="donate__btn" variant="secondary" aria-label="Get Started">
+              Get Started
+        </Button>
+        <MobileDrawer/>
+        </Container>
+      </header>
   );
 }
 
