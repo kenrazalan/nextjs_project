@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import Head from 'next/head';
 import { jsx, Image, Box, Heading, Text } from 'theme-ui';
 
 export default function FeatureCardColumn({
@@ -8,7 +9,15 @@ export default function FeatureCardColumn({
   text,
 }) {
   return (
-    <h1>FeatureCardColumn</h1>
+    <Box sx={styles.card}>
+      <Image src={src} altText={altText} sx={styles.img}/>
+      <Box sx={styles.wrapper.title}>
+        <Heading sx={styles.wrapper.title}>
+          {title}
+        </Heading>
+        <Text sx={styles.wrapper.subTitle}> {text} </Text>
+      </Box>
+    </Box>
   );
 }
 
